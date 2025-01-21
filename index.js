@@ -42,6 +42,23 @@ alert(`Среднее арефметическое чисто: ${average}`);
 //Розкласти по цифрах п'ятизначне число і вивести у вихідному порядку через пробіл (використовувати оператор “розподіл по модулю” (%)
 
 let numb = prompt("Введите 5-ти значное число:");
-let result = numb.toString().split("");
+// let result = numb.toString().split("");
+
+let result = "";
+ result += (numb / 10000 | 0) + " ";
+ numb %= 10000;
+ 
+ result += (numb / 1000 | 0) + " ";
+ numb %= 1000;
+
+ result += (numb / 100 | 0) + " ";
+ numb %= 100;
+
+ result += (numb / 10 | 0) + " ";
+ numb %= 10;
+
+ result += numb;
 
 alert(`Результат: ${result}`);
+
+
